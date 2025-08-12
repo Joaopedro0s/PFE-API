@@ -1,12 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MURAL DE RECADOS</title>
+    <title>Mural de Recados - Estilo Orkut</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Lista de Recados</h1>
-    <ul id="Lista"></ul>
+    <div class="orkut-container">
+        <div class="orkut-header">
+            <h1>Mural de Recados</h1>
+            <div class="orkut-logo">orkut</div>
+        </div>
+        
+        <div class="orkut-content">
+            <div class="orkut-sidebar">
+                <div class="profile-box">
+                    <div class="profile-pic"></div>
+                    <h3>Jaozin</h3>
+                    <p>Membro desde: 2006</p>
+                </div>
+                <div class="menu">
+                    <ul>
+                        <li>Perfil</li>
+                        <li>Amigos</li>
+                        <li>Comunidades</li>
+                        <li>Fotos</li>
+                        <li>Vídeos</li>
+                        <li class="active">Recados</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="orkut-main">
+                <div class="mural-container">
+                    <div class="mural-header">
+                        <h2>Recados (<span id="recados-count">0</span>)</h2>
+                        <button class="orkut-button">Escrever recado</button>
+                    </div>
+                    
+                    <div id="mural-lista" class="mural-list">
+                        <div class="loading">Carregando recados...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>

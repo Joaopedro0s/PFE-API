@@ -1,0 +1,262 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', Arial, sans-serif;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f0f2f5;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.orkut-container {
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.orkut-header {
+    background-color: #EE2560;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.orkut-logo {
+    font-family: 'Arial', sans-serif;
+    font-size: 32px;
+    font-weight: bold;
+    color: white;
+    text-transform: lowercase;
+}
+
+.orkut-content {
+    display: flex;
+    flex: 1;
+}
+
+.orkut-sidebar {
+    width: 250px;
+    background-color: #f8f8f8;
+    border-right: 1px solid #e0e0e0;
+    padding: 20px;
+}
+
+.profile-box {
+    text-align: center;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.profile-pic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #ddd;
+    margin: 0 auto 10px;
+    background-image: url('https://i.pinimg.com/originals/58/ac/2e/58ac2e722527319666603da8a7570f53.jpg');
+    background-size: cover;
+}
+
+.menu ul {
+    list-style: none;
+}
+
+.menu li {
+    padding: 10px 15px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.menu li:hover {
+    background-color: #e0e0e0;
+}
+
+.menu li.active {
+    background-color: #EE2560;
+    color: white;
+}
+
+.orkut-main {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.mural-container {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.mural-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.mural-header h2 {
+    color: #EE2560;
+    font-size: 20px;
+}
+
+.orkut-button {
+    background-color: #EE2560;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.orkut-button:hover {
+    background-color: #d41c53;
+}
+
+.mural-list {
+    flex: 1;
+    min-height: 300px;
+    list-style: none;
+    overflow-y: auto;
+}
+
+.mural-list li {
+    background-color: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    padding: 15px;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.mural-list strong {
+    font-weight: bold;
+    color: #EE2560;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.mural-list p {
+    margin: 10px 0;
+    line-height: 1.5;
+}
+
+.mural-list small {
+    font-size: 12px;
+    color: #777;
+}
+
+.recado-autor-pic {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+}
+
+.recado-autor-pic[data-initial="A"],
+.recado-autor-pic[data-initial="I"],
+.recado-autor-pic[data-initial="Q"],
+.recado-autor-pic[data-initial="Y"] {
+    background-color: #EE2560;
+}
+
+.recado-autor-pic[data-initial="B"],
+.recado-autor-pic[data-initial="J"],
+.recado-autor-pic[data-initial="R"],
+.recado-autor-pic[data-initial="Z"] {
+    background-color: #FF6B6B;
+}
+
+.recado-autor-pic[data-initial="C"],
+.recado-autor-pic[data-initial="K"],
+.recado-autor-pic[data-initial="S"] {
+    background-color: #4ECDC4;
+}
+
+.recado-autor-pic[data-initial="D"],
+.recado-autor-pic[data-initial="L"],
+.recado-autor-pic[data-initial="T"] {
+    background-color: #45B7D1;
+}
+
+.recado-autor-pic[data-initial="E"],
+.recado-autor-pic[data-initial="M"],
+.recado-autor-pic[data-initial="U"] {
+    background-color: #A38DF3;
+}
+
+.recado-autor-pic[data-initial="F"],
+.recado-autor-pic[data-initial="N"],
+.recado-autor-pic[data-initial="V"] {
+    background-color: #FFA07A;
+}
+
+.recado-autor-pic[data-initial="G"],
+.recado-autor-pic[data-initial="O"],
+.recado-autor-pic[data-initial="W"] {
+    background-color: #20B2AA;
+}
+
+.recado-autor-pic[data-initial="H"],
+.recado-autor-pic[data-initial="P"],
+.recado-autor-pic[data-initial="X"] {
+    background-color: #9370DB;
+}
+
+.loading {
+    text-align: center;
+    padding: 30px;
+    color: #777;
+}
+
+.error-message {
+    color: #d41c53;
+    text-align: center;
+    padding: 30px;
+}
+
+@media (max-width: 768px) {
+    .orkut-content {
+        flex-direction: column;
+    }
+    
+    .orkut-sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #e0e0e0;
+    }
+}
