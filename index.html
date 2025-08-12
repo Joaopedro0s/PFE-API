@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Mural de Recados - Estilo Orkut</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
     <div class="orkut-container">
@@ -13,7 +13,7 @@
             <h1>Mural de Recados</h1>
             <div class="orkut-logo">orkut</div>
         </div>
-        
+
         <div class="orkut-content">
             <div class="orkut-sidebar">
                 <div class="profile-box">
@@ -32,17 +32,34 @@
                     </ul>
                 </div>
             </div>
-            
+
             <div class="orkut-main">
                 <div class="mural-container">
                     <div class="mural-header">
                         <h2>Recados (<span id="recados-count">0</span>)</h2>
-                        <button class="orkut-button">Escrever recado</button>
+
+                        <div class="filtros">
+                            <label for="filtro-ordem">Ordenar por:</label>
+                            <select id="filtro-ordem">
+                                <option value="data_desc">Data (mais recente)</option>
+                                <option value="data_asc">Data (mais antiga)</option>
+                                <option value="autor_asc">Autor (A-Z)</option>
+                                <option value="autor_desc">Autor (Z-A)</option>
+                            </select>
+                        </div>
+
+                        <button class="orkut-button" id="btn-escrever-recado">Escrever recado</button>
                     </div>
-                    
-                    <div id="mural-lista" class="mural-list">
+
+                    <form id="form-recado" style="display:none;" class="form-recado">
+                        <input type="text" id="autor" placeholder="Seu nome" maxlength="30" />
+                        <textarea id="mensagem" placeholder="Escreva seu recado..." maxlength="500"></textarea>
+                        <button type="button" id="btn-publicar-recado" class="orkut-button">Publicar Recado</button>
+                    </form>
+
+                    <ul id="mural-lista" class="mural-list">
                         <div class="loading">Carregando recados...</div>
-                    </div>
+                    </ul>
                 </div>
             </div>
         </div>
