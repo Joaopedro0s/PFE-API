@@ -82,7 +82,7 @@ btnEscreverRecado.addEventListener('click', () => {
     }
 });
 
-// Publicar recado local (não envia para API, só adiciona na lista atual)
+// Publicar recado via POST na API
 btnPublicarRecado.addEventListener('click', () => {
     const autor = inputAutor.value.trim();
     const mensagem = inputMensagem.value.trim();
@@ -94,22 +94,38 @@ btnPublicarRecado.addEventListener('click', () => {
 
     const novoRecado = {
         autor,
-        mensagem,
-        data_criacao: new Date().toISOString()
+        mensagem
     };
 
-    recados.unshift(novoRecado); // adiciona no início
-    renderizarRecados();
+    fetch(apiUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(novoRecado)
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`Erro ao publicar recado! Status: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then(recadoCriado => {
+        recados.unshift(recadoCriado);
+        renderizarRecados();
 
-    // Limpa formulário e fecha
-    inputAutor.value = '';
-    inputMensagem.value = '';
-    formRecado.style.display = 'none';
+        inputAutor.value = '';
+        inputMensagem.value = '';
+        formRecado.style.display = 'none';
+    })
+    .catch(error => {
+        console.error(error);
+        alert('Não foi possível publicar o recado. Tente novamente mais tarde.');
+    });
 });
 
+// Re-renderizar quando muda a ordenação
 filtroOrdemSelect.addEventListener('change', () => {
     renderizarRecados();
 });
 
-// Carrega os recados quando a página abre
+// Carrega os recados ao abrir a página
 carregarRecados();
